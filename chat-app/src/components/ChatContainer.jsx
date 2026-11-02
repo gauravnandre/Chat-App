@@ -144,8 +144,8 @@ const ChatContainer = () => {
           <div
             key={msg._id || index}
             className={`flex items-end gap-2 mb-5 ${
-              msg.senderId !== authUser._id
-                ? 'flex-row-reverse'
+              String(msg.senderId?._id || msg.senderId) === String(authUser?._id)
+                ? 'justify-start'
                 : 'justify-end'
             }`}
           >
